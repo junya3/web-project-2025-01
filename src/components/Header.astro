@@ -1,0 +1,161 @@
+---
+import navList from '/src/data/navList.json';
+---
+
+<header>
+  <h1>
+    <a href="/">
+      <img src="/image/logo.svg" alt="Tech.c.のロゴ" />
+    </a>
+  </h1>
+  <nav>
+    <button class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="bg"></div>
+    <div class="header-list">
+      <a href="/"><img src="/image/logo.svg" alt="Tech.c.のロゴ" /></a>
+      <ul>
+        {
+          navList.list.map((item) => (
+            <li>
+              <a href={item.href}>{item.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 40px;
+    height: 80px;
+    border-bottom: 1px solid #eaeaea;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  h1 {
+    width: 400px;
+  }
+  .burger {
+    aspect-ratio: 1/1;
+    width: 40px;
+    position: relative;
+    transition: rotate 0.5s;
+    span {
+      display: block;
+      width: 28px;
+      height: 2px;
+      position: absolute;
+      background: #000;
+      border-radius: 999px;
+      transition:
+        background 0.5s,
+        rotate 0.5s,
+        top 0.5s;
+      rotate: 0;
+      &:nth-child(1) {
+        top: 30%;
+        translate: 0 -50%;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        translate: 0 -50%;
+      }
+      &:nth-child(3) {
+        top: 70%;
+        translate: 0 -50%;
+      }
+    }
+    &.active {
+      span {
+        top: 50%;
+        &:nth-child(1) {
+          rotate: 45deg;
+        }
+        &:nth-child(2) {
+          background: #0000;
+        }
+        &:nth-child(3) {
+          rotate: -45deg;
+        }
+      }
+      & ~ .header-list {
+        translate: 0 0;
+      }
+      & ~ .bg {
+        background: color-mix(in srgb, #000 50%, #0000);
+        pointer-events: auto;
+        backdrop-filter: blur(1px);
+      }
+    }
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    z-index: 999;
+  }
+  .header-list {
+    width: fit-content;
+    height: 100dvh;
+    background: #eaeaea;
+    position: fixed;
+    z-index: 990;
+    top: 0;
+    right: 0;
+
+    padding-inline: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+
+    translate: 100% 0;
+    transition: translate 0.5s;
+    img {
+      width: 320px;
+    }
+    ul {
+      display: grid;
+      gap: 14px;
+    }
+  }
+  .bg {
+    pointer-events: none;
+    position: fixed;
+    margin: auto;
+    inset: 0;
+    transition:
+      background 0.5s,
+      backdrop-filter 0.5s;
+    background: color-mix(in srgb, #000 0%, #0000);
+    backdrop-filter: blur(0px);
+  }
+</style>
+
+<script>
+  const burger = document.querySelector('.burger');
+  const background = document.querySelector('.bg');
+
+  burger?.addEventListener('click', () => {
+    burger.classList.toggle('active');
+  });
+  background?.addEventListener('click', () => {
+    burger?.classList.toggle('active');
+  });
+</script>
