@@ -28,18 +28,46 @@
   .burger {
     aspect-ratio: 1/1;
     width: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
+    position: relative;
+    transition: rotate 0.5s;
     span {
       display: block;
-      width: 20px;
+      width: 28px;
       height: 2px;
-      position: relative;
+      position: absolute;
       background: #000;
       border-radius: 999px;
+      transition:
+        background 0.5s,
+        rotate 0.5s,
+        top 0.5s;
+      rotate: 0;
+      &:nth-child(1) {
+        top: 30%;
+        translate: 0 -50%;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        translate: 0 -50%;
+      }
+      &:nth-child(3) {
+        top: 70%;
+        translate: 0 -50%;
+      }
+    }
+    &.active {
+      span {
+        top: 50%;
+        &:nth-child(1) {
+          rotate: 45deg;
+        }
+        &:nth-child(2) {
+          background: #0000;
+        }
+        &:nth-child(3) {
+          rotate: -45deg;
+        }
+      }
     }
   }
   button {
@@ -51,3 +79,11 @@
     appearance: none;
   }
 </style>
+
+<script>
+  const burger = document.querySelector('.burger');
+
+  burger?.addEventListener('click', () => {
+    burger.classList.toggle('active');
+  });
+</script>
