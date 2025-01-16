@@ -16,7 +16,7 @@ import navList from '/src/data/navList.json';
     </button>
     <div class="bg"></div>
     <div class="header-list">
-      <img src="/src/assets/logo.svg" alt="Tech.c.のロゴ" />
+      <a href="/"><img src="/src/assets/logo.svg" alt="Tech.c.のロゴ" /></a>
       <ul>
         {
           navList.list.map((item) => (
@@ -129,6 +129,10 @@ import navList from '/src/data/navList.json';
     transition: translate 0.5s;
     img {
       width: 320px;
+    }
+    ul {
+      display: grid;
+      gap: 14px;
     }
   }
   .bg {
