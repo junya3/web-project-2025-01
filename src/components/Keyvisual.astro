@@ -1,9 +1,29 @@
-<div class="keyvisual"></div>
+<div class="wrap">
+  <div class="visual"></div>
+  <div class="links">
+    <a href="/" class="links">TECH.C.ホームページへ</a>
+    <a href="/" class="links">ご意見・ご感想</a>
+  </div>
+</div>
 
 <style>
-  .keyvisual {
+  .wrap {
     width: 100%;
     height: calc(100dvh - var(--header-height));
-    background: #ccc;
+  }
+  .links {
+    width: fit-content;
+    display: grid;
+    a {
+      padding: 1rem;
+      background: var(--btn-color-100);
+      color: #fff;
+      border-radius: 0.5rem 0 0 0.5rem;
+      font-weight: 600;
+      &:nth-child(2) {
+        background: var(--btn-color-200);
+        color: var(--text-color-black);
+      }
+    }
   }
 </style>
