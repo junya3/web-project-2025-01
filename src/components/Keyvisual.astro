@@ -1,0 +1,40 @@
+<div class="wrap">
+  <div class="visual"></div>
+  <div class="links">
+    <a href="/">TECH.C.ホームページへ</a>
+    <a href="/">ご意見・ご感想</a>
+  </div>
+</div>
+
+<style>
+  .wrap {
+    width: 100%;
+    height: calc(100dvh - var(--header-height));
+    position: relative;
+  }
+  .links {
+    width: fit-content;
+    display: grid;
+    gap: var(--inner-gap);
+
+    position: absolute;
+    right: 0;
+    bottom: 80px;
+    a {
+      width: auto;
+      height: fit-content;
+      padding: 1rem;
+      background: var(--btn-color-100);
+      border-radius: 0.5rem 0 0 0.5rem;
+
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+      &:nth-child(2) {
+        background: var(--btn-color-200);
+        color: var(--text-color-black);
+      }
+    }
+  }
+</style>
