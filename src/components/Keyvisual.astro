@@ -1,8 +1,8 @@
 <div class="wrap">
   <div class="visual"></div>
   <div class="links">
-    <a href="/" class="links">TECH.C.ホームページへ</a>
-    <a href="/" class="links">ご意見・ご感想</a>
+    <a href="/">TECH.C.ホームページへ</a>
+    <a href="/">ご意見・ご感想</a>
   </div>
 </div>
 
@@ -10,13 +10,19 @@
   .wrap {
     width: 100%;
     height: calc(100dvh - var(--header-height));
+    position: relative;
   }
   .links {
     width: fit-content;
     display: grid;
     gap: var(--inner-gap);
+
+    position: absolute;
+    right: 0;
+    bottom: 80px;
     a {
-      inline-size: auto;
+      width: auto;
+      height: fit-content;
       padding: 1rem;
       background: var(--btn-color-100);
       border-radius: 0.5rem 0 0 0.5rem;
