@@ -10,13 +10,10 @@ import Contents from '/src/data/contentsList.js';
     <div class="swiper-wrapper">
       {
         (() => {
-          // フラット化された配列
-          const flatContent = Contents.content.flatMap((group) => group);
-
           // 配列を 6 件ごとに分割
           const groupedContent = [];
-          while (flatContent.length) {
-            groupedContent.push(flatContent.splice(0, 6));
+          while (Contents.content.length) {
+            groupedContent.push(Contents.content.splice(0, 6));
           }
 
           // 分割した配列を利用してコンテンツを生成

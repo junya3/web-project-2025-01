@@ -9,8 +9,6 @@ import Contents from '/src/data/contentsList.js';
   <ul class="ranking-items">
     {
       Contents.content
-        // ネストされた配列をフラットにする
-        .flatMap((array) => array)
         // rankingがある要素だけを抽出
         .filter((content) => content.ranking)
         // ranking順にソート
