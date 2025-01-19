@@ -8,27 +8,35 @@ import Contents from '/src/data/contentsList.js';
   <SecTitle title="展示物・ステージ企画一覧" />
   <div class="swiper">
     <div class="swiper-wrapper">
-      <!-- スライド -->
       {
-        Contents.content.map((group) => (
-          <ul class="swiper-slide">
-            {group.map((content) => (
-              <li>
-                <Image src={content.image} alt={content.alt} width="200" />
-                <div class="text">
-                  <h3>
-                    <span>展示名</span>
-                    <span>{content.title}</span>
-                  </h3>
-                  <p>
-                    <span>展示内容</span>
-                    <span>{content.description}</span>
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        ))
+        (() => {
+          // 配列を 6 件ごとに分割
+          const groupedContent = [];
+          while (Contents.content.length) {
+            groupedContent.push(Contents.content.splice(0, 6));
+          }
+
+          // 分割した配列を利用してコンテンツを生成
+          return groupedContent.map((group) => (
+            <ul class="swiper-slide">
+              {group.map((content) => (
+                <li>
+                  <Image src={content.image} alt={content.alt} width="200" />
+                  <div class="text">
+                    <h3>
+                      <span>展示名</span>
+                      <span>{content.title}</span>
+                    </h3>
+                    <p>
+                      <span>展示内容</span>
+                      <span>{content.description}</span>
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ));
+        })()
       }
     </div>
     <!-- ページネーション -->
@@ -48,7 +56,7 @@ import Contents from '/src/data/contentsList.js';
     padding-bottom: 48px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: var(--gap);
 
     li {
       height: 150px;
@@ -57,7 +65,9 @@ import Contents from '/src/data/contentsList.js';
       display: grid;
       grid-template-columns: 150px 1fr;
 
-      &:nth-child(1),
+      background: var(--bg-color-200);
+
+      /* &:nth-child(1),
       &:nth-child(4) {
         background: var(--primary-color-100);
       }
@@ -68,7 +78,7 @@ import Contents from '/src/data/contentsList.js';
       &:nth-child(3),
       &:nth-child(6) {
         background: var(--primary-color-300);
-      }
+      } */
 
       img {
         width: 100%;
