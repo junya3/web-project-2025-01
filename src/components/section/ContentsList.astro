@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import SecTitle from '/src/components/parts/SecTitle.astro';
 import Contents from '/src/data/contentsList.js';
 ---
@@ -10,11 +11,17 @@ import Contents from '/src/data/contentsList.js';
       <!-- スライド -->
       {
         Contents.content.map((group) => (
-          <div class="swiper-slide">
+          <ul class="swiper-slide">
             {group.map((content) => (
-              <div>{content.title}</div>
+              <li>
+                <Image src={content.image} alt={content.alt} width="200" />
+                <div class="text">
+                  <h3>{content.title}</h3>
+                  <p>{content.description}</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         ))
       }
     </div>
@@ -32,13 +39,13 @@ import Contents from '/src/data/contentsList.js';
 
   .swiper-slide {
     box-sizing: border-box;
-    background: #f0f0f0;
     padding-bottom: 48px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 
-    div {
+    li {
+      padding: 1rem;
       background: #ccc;
       height: 150px;
       border-radius: 0.5rem;
