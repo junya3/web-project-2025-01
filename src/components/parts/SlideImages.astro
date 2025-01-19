@@ -1,0 +1,128 @@
+---
+import { Image } from 'astro:assets';
+import slideImage1 from '/src/assets/image/slide/slide-image1.png';
+import slideImage2 from '/src/assets/image/slide/slide-image2.png';
+import slideImage3 from '/src/assets/image/slide/slide-image3.png';
+import slideImage4 from '/src/assets/image/slide/slide-image4.png';
+import slideImage5 from '/src/assets/image/slide/slide-image5.png';
+import slideImage6 from '/src/assets/image/slide/slide-image6.png';
+import slideImage7 from '/src/assets/image/slide/slide-image7.png';
+import slideImage8 from '/src/assets/image/slide/slide-image8.png';
+import slideImage9 from '/src/assets/image/slide/slide-image9.png';
+import slideImage10 from '/src/assets/image/slide/slide-image10.png';
+import slideImage11 from '/src/assets/image/slide/slide-image11.png';
+import slideImage12 from '/src/assets/image/slide/slide-image12.png';
+
+const oddImage = [
+  slideImage1,
+  slideImage2,
+  slideImage3,
+  slideImage4,
+  slideImage5,
+  slideImage6,
+];
+const evenImage = [
+  slideImage7,
+  slideImage8,
+  slideImage9,
+  slideImage10,
+  slideImage11,
+  slideImage12,
+];
+---
+
+<div id="container">
+  <div id="scroll-wrap">
+    <ul class="slide-row odd">
+      {
+        oddImage.concat(oddImage).map((image, index) => (
+          <li>
+            <Image
+              src={image}
+              alt={`スライド画像 ${index + 1}`}
+              width="200"
+              height="150"
+            />
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="slide-row even">
+      {
+        evenImage.concat(evenImage).map((image, index) => (
+          <li>
+            <Image
+              src={image}
+              alt={`スライド画像 ${index + 1}`}
+              width="200"
+              height="150"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  #container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 2/1;
+    position: relative;
+  }
+  #scroll-wrap {
+    margin-bottom: 100vh;
+    width: 100%;
+    height: fit-content;
+    padding-block: 40px;
+    display: grid;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    gap: 2vw;
+    rotate: -10deg;
+    .slide-row {
+      display: flex;
+      gap: 2vw;
+      li {
+        width: 18vw;
+        aspect-ratio: 4/3;
+        background: #ccc;
+        border-radius: 20px;
+        overflow: hidden;
+        filter: blur(1px) grayscale(80%);
+        transition: filter 0.2s;
+        &:hover {
+          filter: blur(0px) grayscale(0);
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap/dist/gsap';
+
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+  // 関数オブジェクトにして管理
+  const moveX = (value) => ({
+    x: value,
+    scrollTrigger: {
+      trigger: '#scroll-wrap',
+      scrub: 'none',
+    },
+  });
+
+  gsap.from('.odd', moveX('-25%'));
+  gsap.to('.even', moveX('-25%'));
+</script>

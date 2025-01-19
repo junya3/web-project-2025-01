@@ -38,7 +38,8 @@ import navList from '/src/data/navList.json';
     justify-content: space-between;
     padding-inline: 40px;
     height: var(--header-height);
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--bg-color-200);
+    background: var(--bg-color-300);
 
     position: sticky;
     top: 0;
@@ -57,7 +58,7 @@ import navList from '/src/data/navList.json';
       width: 28px;
       height: 2px;
       position: absolute;
-      background: #000;
+      background: var(--bg-color-100);
       border-radius: 999px;
       transition:
         background 0.5s,
@@ -112,7 +113,7 @@ import navList from '/src/data/navList.json';
   .header-list {
     width: fit-content;
     height: 100dvh;
-    background: #eaeaea;
+    background: var(--bg-color-200);
     position: fixed;
     z-index: 990;
     top: 0;
