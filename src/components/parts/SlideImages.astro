@@ -1,91 +1,81 @@
 ---
-import ImageFrame from '../parts/ImageFrame.astro';
+import { Image } from 'astro:assets';
+const oddImage = [
+  'slide-image1.png',
+  'slide-image2.png',
+  'slide-image3.png',
+  'slide-image4.png',
+  'slide-image5.png',
+  'slide-image6.png',
+];
+const evenImage = [
+  'slide-image8.png',
+  'slide-image9.png',
+  'slide-image10.png',
+  'slide-image11.png',
+  'slide-image12.png',
+  'slide-image13.png',
+];
 ---
 
-<ImageFrame srcPaths={['slide/slide-image1.png']} />
-こんにちは
-
-<div id="scroll-wrap">
-  <ul class="slide-row odd">
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1721332153370-56d7cc352d63?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1731778572747-315c9089bc69?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1730562885841-0163ae9eeca9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1731330269319-0f053cd5d74b?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1731331131233-4f73c93ae693?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1732287931034-c4cc1b06de6a?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-  </ul>
-  <ul class="slide-row even">
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1732928913242-1f58eede0e19?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1734495078257-b15bdc0fb0b5?q=80&w=2555&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1732888329753-0ff89467e6c8?q=80&w=2950&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1733235015107-5ab658892359?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1733837323673-da9b3a98135e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-    <li>
-      <img
-        src="https://images.unsplash.com/photo-1733914359713-e9c8c70b15c9?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
-    </li>
-  </ul>
+<div id="container">
+  <div id="scroll-wrap">
+    <ul class="slide-row odd">
+      {
+        oddImage.map((image) => (
+          <li>
+            <Image
+              src={`/src/assets/image/slide/${image}`}
+              alt=""
+              width="200"
+              height="150"
+            />
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="slide-row even">
+      {
+        evenImage.map((image) => (
+          <li>
+            <Image
+              src={`/src/assets/image/slide/${image}`}
+              alt=""
+              width="200"
+              height="150"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </div>
 
 <style>
+  #container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 2/1;
+    position: relative;
+  }
   #scroll-wrap {
     margin-bottom: 100vh;
     width: 100%;
     height: fit-content;
     padding-block: 40px;
     display: grid;
+    position: absolute;
+    margin: auto;
+    inset: 0;
     gap: 2vw;
-    overflow: hidden;
+    rotate: -10deg;
     .slide-row {
       display: flex;
       gap: 2vw;
       li {
-        width: 25vw;
+        width: 18vw;
         aspect-ratio: 4/3;
         background: #ccc;
         border-radius: 20px;
