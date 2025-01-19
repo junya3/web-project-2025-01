@@ -16,3 +16,127 @@ import image15 from '/src/assets/image/contents/contents-image15.png';
 import image16 from '/src/assets/image/contents/contents-image16.png';
 import image17 from '/src/assets/image/contents/contents-image17.png';
 import image18 from '/src/assets/image/contents/contents-image18.png';
+
+export default {
+  content: [
+    [
+      {
+        title: 'タイトル1',
+        image: image01,
+        alt: `${title}の出展様子`,
+        description: '駄菓子',
+        ranking: 1,
+      },
+      {
+        title: 'タイトル2',
+        image: image02,
+        alt: `${title}の出展様子`,
+        description: 'たこ焼き',
+        ranking: 2,
+      },
+      {
+        title: 'タイトル3',
+        image: image03,
+        alt: `${title}の出展様子`,
+        description: 'クレープ',
+        ranking: 3,
+      },
+      {
+        title: 'タイトル4',
+        image: image04,
+        alt: `${title}の出展様子`,
+        description: 'フランクフルト',
+        ranking: 4,
+      },
+      {
+        title: 'タイトル5',
+        image: image05,
+        alt: `${title}の出展様子`,
+        description: 'かき氷',
+        ranking: 5,
+      },
+      {
+        title: 'タイトル6',
+        image: image06,
+        alt: `${title}の出展様子`,
+        description: '綿菓子',
+      },
+    ],
+    [
+      {
+        title: 'タイトル7',
+        image: image07,
+        alt: `${title}の出展様子`,
+        description: 'チョコバナナ',
+      },
+      {
+        title: 'タイトル8',
+        image: image08,
+        alt: `${title}の出展様子`,
+        description: 'お好み焼き',
+      },
+      {
+        title: 'タイトル9',
+        image: image09,
+        alt: `${title}の出展様子`,
+        description: '唐揚げ',
+      },
+      {
+        title: 'タイトル10',
+        image: image10,
+        alt: `${title}の出展様子`,
+        description: '焼き鳥',
+      },
+      {
+        title: 'タイトル11',
+        image: image11,
+        alt: `${title}の出展様子`,
+        description: 'ポップコーン',
+      },
+      {
+        title: 'タイトル12',
+        image: image12,
+        alt: `${title}の出展様子`,
+        description: 'ホットドッグ',
+      },
+    ],
+    [
+      {
+        title: 'タイトル13',
+        image: image13,
+        alt: `${title}の出展様子`,
+        description: 'インドカレー',
+      },
+      {
+        title: 'タイトル14',
+        image: image14,
+        alt: `${title}の出展様子`,
+        description: 'ラーメン',
+      },
+      {
+        title: 'タイトル15',
+        image: image15,
+        alt: `${title}の出展様子`,
+        description: 'スイーツパフェ',
+      },
+      {
+        title: 'タイトル16',
+        image: image16,
+        alt: `${title}の出展様子`,
+        description: '餃子',
+      },
+      {
+        title: 'タイトル17',
+        image: image17,
+        alt: `${title}の出展様子`,
+        description: '沖縄そば',
+      },
+      {
+        title: 'タイトル18',
+        image: image18,
+        alt: `${title}の出展様子`,
+        description: 'ソフトクリーム',
+      },
+    ],
+  ],
+};
