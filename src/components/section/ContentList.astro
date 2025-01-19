@@ -1,8 +1,9 @@
 ---
-
+import SecTitle from '../parts/SecTitle.astro';
 ---
 
 <section>
+  <SecTitle title="展示物・ステージ企画一覧" />
   <div class="swiper">
     <div class="swiper-wrapper">
       <!-- スライド -->
@@ -17,10 +18,8 @@
 
 <style>
   .swiper {
-    width: 100%;
-    max-width: 600px;
+    width: inherit;
     height: 300px;
-    margin: auto;
     position: relative;
   }
 
