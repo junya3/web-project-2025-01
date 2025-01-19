@@ -1,0 +1,52 @@
+---
+
+---
+
+<section>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- スライド -->
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- ページネーション -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<style>
+  .swiper {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+  }
+
+  .swiper-slide {
+    background: #f0f0f0;
+  }
+
+  .swiper-pagination {
+    bottom: 10px;
+  }
+</style>
+
+<script>
+  // Swiperとそのモジュールをインポート
+  import Swiper from 'swiper';
+  import { Pagination } from 'swiper/modules';
+  import 'swiper/css/bundle';
+
+  // スライダー設定スクリプト
+  const swiper = new Swiper('.swiper', {
+    modules: [Pagination],
+    loop: true, // 無限ループ
+    speed: 500,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
