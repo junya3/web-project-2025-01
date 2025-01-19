@@ -25,7 +25,6 @@ export default {
         image: image01,
         alt: 'タイトル1の様子',
         description: '駄菓子',
-        ranking: 1,
       },
       {
         title: 'タイトル2',
@@ -39,7 +38,6 @@ export default {
         image: image03,
         alt: 'タイトル3の様子',
         description: 'クレープ',
-        ranking: 3,
       },
       {
         title: 'タイトル4',
@@ -96,6 +94,7 @@ export default {
         image: image12,
         alt: 'タイトル12の様子',
         description: 'ホットドッグ',
+        ranking: 1,
       },
     ],
     [
@@ -134,6 +133,7 @@ export default {
         image: image18,
         alt: 'タイトル18の様子',
         description: 'ソフトクリーム',
+        ranking: 3,
       },
     ],
   ],
