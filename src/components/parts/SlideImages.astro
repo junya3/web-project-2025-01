@@ -1,0 +1,98 @@
+<div id="scroll-wrap">
+  <ul class="slide-row odd">
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1721332153370-56d7cc352d63?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1731778572747-315c9089bc69?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1730562885841-0163ae9eeca9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1731330269319-0f053cd5d74b?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1731331131233-4f73c93ae693?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1732287931034-c4cc1b06de6a?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+  </ul>
+  <ul class="slide-row even">
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1732928913242-1f58eede0e19?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1734495078257-b15bdc0fb0b5?q=80&w=2555&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1732888329753-0ff89467e6c8?q=80&w=2950&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1733235015107-5ab658892359?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1733837323673-da9b3a98135e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+    <li>
+      <img
+        src="https://images.unsplash.com/photo-1733914359713-e9c8c70b15c9?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </li>
+  </ul>
+</div>
+
+<style>
+  #scroll-wrap {
+    margin-bottom: 100vh;
+    width: 100%;
+    height: fit-content;
+    padding-block: 40px;
+    display: grid;
+    gap: 2vw;
+    .slide-row {
+      display: flex;
+      gap: 2vw;
+      li {
+        width: 25vw;
+        aspect-ratio: 4/3;
+        background: #ccc;
+        border-radius: 20px;
+        overflow: hidden;
+        filter: blur(1px) grayscale(80%);
+        transition: filter 0.2s;
+        &:hover {
+          filter: blur(0px) grayscale(0);
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+</style>
