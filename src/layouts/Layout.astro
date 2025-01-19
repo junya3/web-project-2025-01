@@ -51,6 +51,8 @@ const { title } = Astro.props;
     box-sizing: border-box;
     font-family: 'LINESeedJP_OTF';
     font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
   }
   html,
   body {
@@ -58,8 +60,21 @@ const { title } = Astro.props;
     width: 100%;
     height: 100%;
   }
+  body {
+    &.no-scroll {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+  section {
+    padding: 60px 14px;
+    display: grid;
+    gap: 48px;
+  }
   a {
     color: #212121;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     text-decoration: none;
     &:hover {
       text-decoration: underline;

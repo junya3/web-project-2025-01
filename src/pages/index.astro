@@ -1,16 +1,20 @@
 ---
 import Layout from '/src/layouts/Layout.astro';
 import Keyvisual from '/src/components/Keyvisual.astro';
+import AboutSec from '/src/components/section/AboutSec.astro';
 ---
 
 <Layout title="トップページ">
   <Keyvisual />
-</Layout>
+  <div class="contents">
+    <AboutSec />
+  </div>
 
-<style>
-  h1 {
-    font-family: 'Rampart One', serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-</style>
+  <style>
+    h1 {
+      font-family: 'Rampart One', serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</Layout>
