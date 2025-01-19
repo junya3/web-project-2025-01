@@ -1,20 +1,34 @@
 ---
 import { Image } from 'astro:assets';
+import slideImage1 from '/src/assets/image/slide/slide-image1.png';
+import slideImage2 from '/src/assets/image/slide/slide-image2.png';
+import slideImage3 from '/src/assets/image/slide/slide-image3.png';
+import slideImage4 from '/src/assets/image/slide/slide-image4.png';
+import slideImage5 from '/src/assets/image/slide/slide-image5.png';
+import slideImage6 from '/src/assets/image/slide/slide-image6.png';
+
+import slideImage8 from '/src/assets/image/slide/slide-image8.png';
+import slideImage9 from '/src/assets/image/slide/slide-image9.png';
+import slideImage10 from '/src/assets/image/slide/slide-image10.png';
+import slideImage11 from '/src/assets/image/slide/slide-image11.png';
+import slideImage12 from '/src/assets/image/slide/slide-image12.png';
+import slideImage13 from '/src/assets/image/slide/slide-image13.png';
+
 const oddImage = [
-  'slide-image1.png',
-  'slide-image2.png',
-  'slide-image3.png',
-  'slide-image4.png',
-  'slide-image5.png',
-  'slide-image6.png',
+  slideImage1,
+  slideImage2,
+  slideImage3,
+  slideImage4,
+  slideImage5,
+  slideImage6,
 ];
 const evenImage = [
-  'slide-image8.png',
-  'slide-image9.png',
-  'slide-image10.png',
-  'slide-image11.png',
-  'slide-image12.png',
-  'slide-image13.png',
+  slideImage8,
+  slideImage9,
+  slideImage10,
+  slideImage11,
+  slideImage12,
+  slideImage13,
 ];
 ---
 
@@ -22,11 +36,11 @@ const evenImage = [
   <div id="scroll-wrap">
     <ul class="slide-row odd">
       {
-        oddImage.map((image) => (
+        oddImage.concat(oddImage).map((image, index) => (
           <li>
             <Image
-              src={`/src/assets/image/slide/${image}`}
-              alt=""
+              src={image}
+              alt={`スライド画像 ${index + 1}`}
               width="200"
               height="150"
             />
@@ -36,11 +50,11 @@ const evenImage = [
     </ul>
     <ul class="slide-row even">
       {
-        evenImage.map((image) => (
+        evenImage.concat(evenImage).map((image, index) => (
           <li>
             <Image
-              src={`/src/assets/image/slide/${image}`}
-              alt=""
+              src={image}
+              alt={`スライド画像 ${index + 1}`}
               width="200"
               height="150"
             />
