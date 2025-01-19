@@ -2,14 +2,15 @@
 import { Image } from 'astro:assets';
 import SecTitle from '/src/components/parts/SecTitle.astro';
 // 代わりに新しくファイルを作成
-import ranking from '/src/data/ranking.js';
+// import Contents from '../../data/contentsList';
+import Contents from '/src/data/ranking.js';
 ---
 
 <section>
   <SecTitle title="出展ランキング" />
   <ul class="ranking-items">
     {
-      ranking.content
+      Contents.content
         // rankingがある要素だけを抽出
         .filter((content) => content.ranking)
         // ranking順にソート
