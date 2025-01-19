@@ -10,25 +10,37 @@ import Contents from '/src/data/contentsList.js';
     <div class="swiper-wrapper">
       <!-- スライド -->
       {
-        Contents.content.map((group) => (
-          <ul class="swiper-slide">
-            {group.map((content) => (
-              <li>
-                <Image src={content.image} alt={content.alt} width="200" />
-                <div class="text">
-                  <h3>
-                    <span>展示名</span>
-                    <span>{content.title}</span>
-                  </h3>
-                  <p>
-                    <span>展示内容</span>
-                    <span>{content.description}</span>
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        ))
+        (() => {
+          // フラット化された配列
+          const flatContent = Contents.content.flatMap((group) => group);
+
+          // 配列を 6 件ごとに分割
+          const groupedContent = [];
+          while (flatContent.length) {
+            groupedContent.push(flatContent.splice(0, 6));
+          }
+
+          // 分割した配列を利用してコンテンツを生成
+          return groupedContent.map((group) => (
+            <ul class="swiper-slide">
+              {group.map((content) => (
+                <li>
+                  <Image src={content.image} alt={content.alt} width="200" />
+                  <div class="text">
+                    <h3>
+                      <span>展示名</span>
+                      <span>{content.title}</span>
+                    </h3>
+                    <p>
+                      <span>展示内容</span>
+                      <span>{content.description}</span>
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ));
+        })()
       }
     </div>
     <!-- ページネーション -->

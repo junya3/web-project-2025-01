@@ -9,9 +9,9 @@ import Contents from '/src/data/contentsList.js';
   <ul>
     {
       Contents.content
-        .flat() // 6こずつの配列として管理していたものを
-        .filter((content) => content.ranking) // rankingがあるコンテンツだけをフィルタリング
-        .sort((a, b) => a.ranking - b.ranking) // ranking順に昇順でソート
+        .flatMap((array) => array) // ネストされた配列をフラットにする
+        .filter((content) => content.ranking) // rankingがある要素だけを抽出
+        .sort((a, b) => a.ranking - b.ranking) // ranking順にソート
         .map((content) => (
           <li>
             {content.ranking}位: {content.title}
