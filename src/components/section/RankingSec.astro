@@ -6,7 +6,7 @@ import Contents from '/src/data/contentsList.js';
 
 <section>
   <SecTitle title="出展ランキング" />
-  <ul>
+  <ul class="ranking-items">
     {
       Contents.content
         // ネストされた配列をフラットにする
@@ -17,9 +17,52 @@ import Contents from '/src/data/contentsList.js';
         .sort((a, b) => a.ranking - b.ranking)
         .map((content) => (
           <li>
-            {content.ranking}位: {content.title}
+            <Image src={content.image} alt={content.alt} width="200" />
+            <div class="text">
+              <p>{content.ranking}.</p>
+              <h3>
+                <span>展示名</span>
+                <span>{content.title}</span>
+              </h3>
+              <p>
+                <span>展示内容</span>
+                <span>{content.description}</span>
+              </p>
+            </div>
           </li>
         ))
     }
   </ul>
 </section>
+
+<style>
+  .ranking-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+  }
+  .ranking-items li {
+    display: grid;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+
+    .text {
+      display: grid;
+      gap: var(--inner-gap);
+      padding: 0.875rem 0.5rem;
+      height: fit-content;
+
+      h3,
+      p {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+      }
+      span + span::before {
+        content: '：';
+      }
+    }
+  }
+</style>
