@@ -151,11 +151,17 @@ import navList from '/src/data/navList.json';
 <script>
   const burger = document.querySelector('.burger');
   const background = document.querySelector('.bg');
+  const body = document.body;
+
+  const menuToggle = () => {
+    body.classList.toggle('no-scroll');
+    burger?.classList.toggle('active');
+  };
 
   burger?.addEventListener('click', () => {
-    burger.classList.toggle('active');
+    menuToggle();
   });
   background?.addEventListener('click', () => {
-    burger?.classList.toggle('active');
+    menuToggle();
   });
 </script>
