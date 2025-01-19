@@ -8,30 +8,15 @@ import Contents from '/src/data/contentsList.js';
   <div class="swiper">
     <div class="swiper-wrapper">
       <!-- スライド -->
-      <div class="swiper-slide">
-        <div>1コンテンツ</div>
-        <div>2コンテンツ</div>
-        <div>3コンテンツ</div>
-        <div>4コンテンツ</div>
-        <div>5コンテンツ</div>
-        <div>6コンテンツ</div>
-      </div>
-      <div class="swiper-slide">
-        <div>1コンテンツ</div>
-        <div>2コンテンツ</div>
-        <div>3コンテンツ</div>
-        <div>4コンテンツ</div>
-        <div>5コンテンツ</div>
-        <div>6コンテンツ</div>
-      </div>
-      <div class="swiper-slide">
-        <div>1コンテンツ</div>
-        <div>2コンテンツ</div>
-        <div>3コンテンツ</div>
-        <div>4コンテンツ</div>
-        <div>5コンテンツ</div>
-        <div>6コンテンツ</div>
-      </div>
+      {
+        Contents.content.map((group) => (
+          <div class="swiper-slide">
+            {group.map((content) => (
+              <div>{content.title}</div>
+            ))}
+          </div>
+        ))
+      }
     </div>
     <!-- ページネーション -->
     <div class="swiper-pagination"></div>
