@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import SecTitle from '/src/components/parts/SecTitle.astro';
+import Contents from '/src/data/contentsList.js';
+---
+
+<section>
+  <SecTitle title="出展ランキング" />
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- スライド -->
+      {
+        Contents.content.map((group) => (
+          <ul class="swiper-slide">
+            {group
+              .filter((content) => content.ranking) // ランキングがあるものだけをフィルタリング
+              .sort((a, b) => a.ranking - b.ranking) // ランキング順にソート
+              .map((content) => (
+                <li key={content.title}>
+                  <Image src={content.image} alt={content.alt} width="200" />
+                  <div class="text">
+                    <h3>
+                      <span>展示名</span>
+                      <span>{content.title}</span>
+                    </h3>
+                    <p>
+                      <span>展示内容</span>
+                      <span>{content.description}</span>
+                    </p>
+                  </div>
+                </li>
+              ))}
+          </ul>
+        ))
+      }
+    </div>
+    <!-- ページネーション -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script>
+  // Swiperとそのモジュールをインポート
+  import Swiper from 'swiper';
+  import { Pagination } from 'swiper/modules';
+  import 'swiper/css/bundle';
+
+  // スライダー設定スクリプト
+  const swiper = new Swiper('.swiper', {
+    modules: [Pagination],
+    loop: true, // 無限ループ
+    speed: 500,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>

@@ -46,14 +46,12 @@ export default {
         image: image04,
         alt: 'タイトル4の様子',
         description: 'フランクフルト',
-        ranking: 4,
       },
       {
         title: 'タイトル5',
         image: image05,
         alt: 'タイトル5の様子',
         description: 'かき氷',
-        ranking: 5,
       },
       {
         title: 'タイトル6',
