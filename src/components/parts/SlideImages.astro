@@ -1,6 +1,5 @@
 ---
-import { gsap } from 'gsap';
-console.log('using GSAP: ', gsap.version);
+
 ---
 
 <div id="scroll-wrap">
@@ -101,3 +100,22 @@ console.log('using GSAP: ', gsap.version);
     }
   }
 </style>
+
+<script>
+  import { gsap } from 'gsap/dist/gsap';
+
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+  // 関数オブジェクトにして管理
+  const moveX = (value) => ({
+    x: value,
+    scrollTrigger: {
+      trigger: '#scroll-wrap',
+      scrub: 'none',
+    },
+  });
+
+  gsap.from('.odd', moveX(-200));
+  gsap.to('.even', moveX(-200));
+</script>
