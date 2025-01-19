@@ -22,12 +22,12 @@ const {
 
 const importImage = async (src: string) => {
   const imageFile = import.meta.glob<{ default: ImageMetadata }>(
-    '/src/images/**/*'
+    '/src/assets/image/**/*'
   );
 
   //   slideファイルから用いる場合はslide/ファイル名.pngにする必要がある
   if (!imageFile[`/src/assets/image/${src}`]) return;
-  const moduleImage = await imageFile[`/src/images/${src}`]();
+  const moduleImage = await imageFile[`/src/assets/image/${src}`]();
 
   const { default: imageSrc } = moduleImage;
   const image = await getImage({ src: imageSrc, format: format });
