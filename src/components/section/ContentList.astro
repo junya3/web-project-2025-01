@@ -7,9 +7,30 @@ import SecTitle from '../parts/SecTitle.astro';
   <div class="swiper">
     <div class="swiper-wrapper">
       <!-- スライド -->
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">
+        <div>1コンテンツ</div>
+        <div>2コンテンツ</div>
+        <div>3コンテンツ</div>
+        <div>4コンテンツ</div>
+        <div>5コンテンツ</div>
+        <div>6コンテンツ</div>
+      </div>
+      <div class="swiper-slide">
+        <div>1コンテンツ</div>
+        <div>2コンテンツ</div>
+        <div>3コンテンツ</div>
+        <div>4コンテンツ</div>
+        <div>5コンテンツ</div>
+        <div>6コンテンツ</div>
+      </div>
+      <div class="swiper-slide">
+        <div>1コンテンツ</div>
+        <div>2コンテンツ</div>
+        <div>3コンテンツ</div>
+        <div>4コンテンツ</div>
+        <div>5コンテンツ</div>
+        <div>6コンテンツ</div>
+      </div>
     </div>
     <!-- ページネーション -->
     <div class="swiper-pagination"></div>
@@ -19,12 +40,22 @@ import SecTitle from '../parts/SecTitle.astro';
 <style>
   .swiper {
     width: inherit;
-    height: 300px;
+    height: fit-content;
     position: relative;
   }
 
   .swiper-slide {
+    box-sizing: border-box;
     background: #f0f0f0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    div {
+      background: #ccc;
+      height: 150px;
+    }
   }
 
   .swiper-pagination {
