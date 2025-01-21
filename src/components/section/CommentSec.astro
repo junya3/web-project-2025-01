@@ -11,7 +11,12 @@ import persons from '/src/data/comment.js';
     {
       persons.comments.map((comment, index) => (
         <li>
-          <img src={comment.image.src} alt={`${index}人目のコメント`} />
+          <Image
+            src={comment.image}
+            alt={`${index}人目のコメント`}
+            width="200"
+            height="150"
+          />
           <div class="c_text">
             <p>{comment.job}の声</p>
             <p>{comment.comment}</p>
@@ -40,6 +45,7 @@ import persons from '/src/data/comment.js';
       gap: var(--gap);
       img {
         width: 80px;
+        height: 80px;
         aspect-ratio: 1/1;
         border-radius: 50%;
         object-fit: cover;
