@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import SecTitle from '/src/components/parts/SecTitle.astro';
+---
+
+<section>
+  <SecTitle title="当日の様子" />
+  <div class="swiper" id="h_content">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"></div>
+      <div class="swiper-slide"></div>
+      <div class="swiper-slide"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<style>
+  .swiper {
+    width: inherit;
+    height: fit-content;
+    position: relative;
+  }
+  .swiper-slide {
+    width: 400px;
+    height: 300px;
+    background: #ccc;
+  }
+</style>
+
+<script>
+  // Swiperとそのモジュールをインポート
+  import Swiper from 'swiper';
+  import { Pagination } from 'swiper/modules';
+  import 'swiper/css/bundle';
+
+  // スライダー設定スクリプト
+  const swiper = new Swiper('#h_content', {
+    modules: [Pagination],
+    loop: true, // 無限ループ
+    speed: 500,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
