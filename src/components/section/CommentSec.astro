@@ -12,7 +12,51 @@ import SecTitle from '/src/components/parts/SecTitle.astro';
         <p>飲食系の出店がたくさんあって楽しかったです</p>
       </div>
     </li>
+    <li>
+      <img src="/src/assets/image/person/image1.png" alt="" />
+      <div class="c_text">
+        <p>高校一年生の声</p>
+        <p>飲食系の出店がたくさんあって楽しかったです</p>
+      </div>
+    </li>
+    <li>
+      <img src="/src/assets/image/person/image1.png" alt="" />
+      <div class="c_text">
+        <p>高校一年生の声</p>
+        <p>飲食系の出店がたくさんあって楽しかったです</p>
+      </div>
+    </li>
+    <li>
+      <img src="/src/assets/image/person/image1.png" alt="" />
+      <div class="c_text">
+        <p>高校一年生の声</p>
+        <p>飲食系の出店がたくさんあって楽しかったです</p>
+      </div>
+    </li>
   </ul>
 </section>
 
-<style></style>
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      display: flex;
+      align-items: flex-end;
+      img {
+        width: 80px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+      }
+      .text {
+      }
+
+      &:nth-child(2n) {
+        margin-left: auto;
+        img {
+          order: 2;
+        }
+      }
+    }
+  }
+</style>
