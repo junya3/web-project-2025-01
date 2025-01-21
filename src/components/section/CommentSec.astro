@@ -1,0 +1,85 @@
+---
+import { Image } from 'astro:assets';
+import SecTitle from '/src/components/parts/SecTitle.astro';
+
+import persons from '/src/data/comment.js';
+---
+
+<section>
+  <SecTitle title="来場者の声" />
+  <ul class="comment-wrap">
+    {
+      persons.comments.map((comment, index) => (
+        <li>
+          <Image
+            src={comment.image}
+            alt={`${index}人目のコメント`}
+            width="200"
+            height="150"
+          />
+          <div class="c_text">
+            <p>{comment.job}の声</p>
+            <p>{comment.comment}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    width: min(100% - 80px, 900px);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--gap);
+
+    li {
+      display: flex;
+      align-items: flex-end;
+
+      gap: var(--gap);
+      img {
+        width: 80px;
+        height: 80px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .c_text {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: var(--bg-color-100);
+        color: var(--text-color-white);
+
+        display: grid;
+        gap: var(--inner-gap);
+
+        p {
+          font-size: 1.125rem;
+          font-weight: 600;
+          & + p {
+            font-size: 1rem;
+            font-weight: 300;
+          }
+        }
+      }
+      &:nth-child(2n) {
+        margin-left: auto;
+        img {
+          order: 2;
+        }
+      }
+      &:nth-of-type(2n + 1) .c_text {
+        border-bottom-left-radius: 0;
+      }
+      &:nth-of-type(2n) .c_text {
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+</style>
