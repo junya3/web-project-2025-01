@@ -6,7 +6,7 @@ import Contents from '/src/data/contentsList.js';
 
 <section>
   <SecTitle title="展示物・ステージ企画一覧" />
-  <div class="swiper">
+  <div class="swiper" id="c_content">
     <div class="swiper-wrapper">
       {
         (() => {
@@ -110,10 +110,11 @@ import Contents from '/src/data/contentsList.js';
   import 'swiper/css/bundle';
 
   // スライダー設定スクリプト
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('#c_content', {
     modules: [Pagination],
-    loop: true, // 無限ループ
+    loop: false,
     speed: 500,
+    spaceBetween: 16,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
