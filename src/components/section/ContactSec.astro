@@ -4,4 +4,21 @@ import SecTitle from '/src/components/parts/SecTitle.astro';
 
 <section>
   <SecTitle title="ご意見・ご感想" />
+  <form action="">
+    <div class="f_col">
+      <label for="name">お名前</label>
+      <input type="text" name="name" placeholder="山田　太郎" />
+    </div>
+    <div class="f_col">
+      <label for="email">メールアドレス</label>
+      <input type="email" name="email" placeholder="tech@example.com" />
+    </div>
+    <div class="f_col">
+      <label for="detail">ご意見・ご感想</label>
+      <textarea
+        name="detail"
+        rows="5"
+        placeholder="ご意見やご感想をお待ちしております"></textarea>
+    </div>
+  </form>
 </section>
