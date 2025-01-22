@@ -1,28 +1,28 @@
 {
     "list":[
         {
-            "title":"学園祭について知る",
-            "href":"/"
+            "title":"学園祭について",
+            "href":"#about"
         },
         {
             "title":"展示物・ステージ企画一覧",
-            "href":"/"
+            "href":"#contents"
         },
         {
             "title":"展示物ランキング",
-            "href":"/"
+            "href":"#ranking"
         },
         {
             "title":"当日の雰囲気を見る",
-            "href":"/"
+            "href":"#highlight"
         },
         {
-            "title":"参加者の口コミ",
-            "href":"/"
+            "title":"来場者の声",
+            "href":"#comment"
         },
         {
             "title":"ご意見・ご感想フォーム",
-            "href":"/"
+            "href":"#contact"
         }
     ]
 }
