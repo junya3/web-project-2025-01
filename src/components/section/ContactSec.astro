@@ -7,18 +7,54 @@ import SecTitle from '/src/components/parts/SecTitle.astro';
   <form action="">
     <div class="f_col">
       <label for="name">お名前</label>
-      <input type="text" name="name" placeholder="山田　太郎" />
+      <input type="text" name="name" id="name" placeholder="山田　太郎" />
     </div>
     <div class="f_col">
       <label for="email">メールアドレス</label>
-      <input type="email" name="email" placeholder="tech@example.com" />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="tech@example.com"
+      />
     </div>
     <div class="f_col">
       <label for="detail">ご意見・ご感想</label>
       <textarea
         name="detail"
+        id="detail"
         rows="5"
         placeholder="ご意見やご感想をお待ちしております"></textarea>
     </div>
   </form>
 </section>
+
+<style>
+  section {
+    width: min(100% - 80px, 600px);
+  }
+  form {
+    display: grid;
+    gap: var(--gap);
+    .f_col {
+      display: grid;
+      gap: var(--inner-gap);
+
+      label {
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+      input,
+      textarea {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+        color: var(--bg-color-200);
+        border: 1px solid;
+        border-radius: 0.4rem;
+        &::placeholder {
+          color: inherit;
+        }
+      }
+    }
+  }
+</style>
