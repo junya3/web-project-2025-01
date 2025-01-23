@@ -1,7 +1,7 @@
-import image1 from '/src/assets/image/person/image1.png';
-import image2 from '/src/assets/image/person/image2.png';
-import image3 from '/src/assets/image/person/image3.png';
-import image4 from '/src/assets/image/person/image4.png';
+import image1 from '/src/assets/image/person/image1.svg';
+import image2 from '/src/assets/image/person/image2.svg';
+import image3 from '/src/assets/image/person/image3.svg';
+import image4 from '/src/assets/image/person/image4.svg';
 
 export default {
   comments: [
