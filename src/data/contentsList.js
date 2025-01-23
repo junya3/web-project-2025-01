@@ -16,6 +16,12 @@ import image15 from '/src/assets/image/contents/contents-image15.jpg';
 import image16 from '/src/assets/image/contents/contents-image16.jpg';
 import image17 from '/src/assets/image/contents/contents-image17.jpg';
 import image18 from '/src/assets/image/contents/contents-image18.jpg';
+import image19 from '/src/assets/image/contents/contents-image19.jpg';
+import image20 from '/src/assets/image/contents/contents-image20.jpg';
+import image21 from '/src/assets/image/contents/contents-image21.jpg';
+import image22 from '/src/assets/image/contents/contents-image22.jpg';
+import image23 from '/src/assets/image/contents/contents-image23.jpg';
+import image24 from '/src/assets/image/contents/contents-image24.jpg';
 
 export default {
   content: [
@@ -129,6 +135,42 @@ export default {
       alt: 'タイトル18の様子',
       description: 'ソフトクリーム',
       ranking: 3,
+    },
+    {
+      title: 'タイトル19',
+      image: image19,
+      alt: 'タイトル19の様子',
+      description: '焼き芋',
+    },
+    {
+      title: 'タイトル20',
+      image: image20,
+      alt: 'タイトル20の様子',
+      description: 'アイスクリーム',
+    },
+    {
+      title: 'タイトル21',
+      image: image21,
+      alt: 'タイトル21の様子',
+      description: 'たいやき',
+    },
+    {
+      title: 'タイトル22',
+      image: image22,
+      alt: 'タイトル22の様子',
+      description: 'もんじゃ焼き',
+    },
+    {
+      title: 'タイトル23',
+      image: image23,
+      alt: 'タイトル23の様子',
+      description: '焼きそば',
+    },
+    {
+      title: 'タイトル24',
+      image: image24,
+      alt: 'タイトル24の様子',
+      description: '串カツ',
     },
   ],
 };
