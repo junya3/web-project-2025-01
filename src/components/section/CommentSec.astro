@@ -44,11 +44,22 @@ import persons from '/src/data/comment.js';
 
       gap: var(--gap);
       img {
+        box-sizing: border-box;
         width: 80px;
         height: 80px;
+        padding: 0.875rem;
         aspect-ratio: 1/1;
         border-radius: 50%;
         object-fit: cover;
+      }
+      &:nth-child(1) img {
+        background: var(--primary-color-100);
+      }
+      &:nth-child(2n) img {
+        background: var(--primary-color-200);
+      }
+      &:nth-child(3) img {
+        background: var(--primary-color-300);
       }
       .c_text {
         padding: 1rem;
