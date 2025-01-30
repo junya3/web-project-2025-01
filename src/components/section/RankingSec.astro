@@ -65,8 +65,11 @@ import Contents from '/src/data/ranking.js';
         display: grid;
         grid-template-columns: 80px 1fr;
       }
-      span + span::before {
-        content: '：';
+      span + span {
+        display: flex;
+        &::before {
+          content: '：';
+        }
       }
     }
   }
