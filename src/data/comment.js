@@ -1,7 +1,6 @@
 import image1 from '/src/assets/image/person/image1.svg';
 import image2 from '/src/assets/image/person/image2.svg';
 import image3 from '/src/assets/image/person/image3.svg';
-import image4 from '/src/assets/image/person/image4.svg';
 
 export default {
   comments: [
@@ -19,11 +18,6 @@ export default {
       job: '高校生',
       image: image3,
       comment: '学生たちが作ったゲームがたくさんあり、とても楽しかったです。',
-    },
-    {
-      job: '高校生',
-      image: image4,
-      comment: '物販でいろいろ売っていて学生さんも気さくで楽しかったです！',
     },
   ],
 };
