@@ -84,6 +84,16 @@ import SecTitle from '/src/components/parts/SecTitle.astro';
       border-radius: 0.4rem;
       padding: 0.75rem 0.5rem;
       background: var(--bg-color-100);
+      border: 1px solid var(--bg-color-100);
+
+      transition:
+        background 0.2s,
+        color 0.2s;
+
+      &:hover {
+        background: var(--text-color-white);
+        color: var(--bg-color-100);
+      }
     }
   }
 </style>
