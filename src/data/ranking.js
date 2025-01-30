@@ -26,17 +26,17 @@ import image24 from '/src/assets/image/contents/contents-image24.jpg';
 export default {
   content: [
     {
-      title: 'クラッカー販売',
+      title: 'ポップコーン',
       image: image01,
-      alt: 'クラッカー販売の様子',
+      alt: 'ポップコーン販売',
       description: '駄菓子',
+      ranking: 3,
     },
     {
       title: 'うちなー（沖縄）商品販売',
       image: image02,
       alt: 'うちなー（沖縄）商品販売の様子',
       description: '商品販売',
-      ranking: 2,
     },
     {
       title: 'スタンプラリー',
@@ -97,7 +97,6 @@ export default {
       image: image12,
       alt: '自作ゲーム販売の様子',
       description: '自分で作ったゲームを売る',
-      ranking: 1,
     },
     {
       title: 'グッズ販売いし',
@@ -148,16 +147,18 @@ export default {
       description: 'グッズの販売',
     },
     {
-      title: 'パキッラの大逆襲',
+      title: 'SPLASH',
       image: image21,
       alt: 'パキッラの大逆襲の様子',
       description: 'シューティングゲーム',
+      ranking: 1,
     },
     {
       title: 'チーム学スタ　泳げ！マンボウくん',
       image: image22,
       alt: 'チーム学スタ　泳げ！マンボウくんの様子',
       description: '2D弾幕ゲーム',
+      ranking: 2,
     },
     {
       title: '撃墜艦隊',
@@ -170,7 +171,6 @@ export default {
       image: image24,
       alt: '英雄伝説ｰ学園戦争ｰの様子',
       description: '戦略ボードゲーム',
-      ranking: 3,
     },
   ],
 };
